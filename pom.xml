@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>mx.gob.queretaro</groupId>
+	<artifactId>sakila01</artifactId>
+	<version>0.0.1</version>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>salika01Ear</module>
+		<module>sakila01Ejb</module>
+		<module>sakila01War</module>
+	</modules>
+
+	<repositories>
+		<repository>
+			<id>redhat-ga</id>
+			<name>Red Hat GA Repository</name>
+			<url>https://maven.repository.redhat.com/ga/</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>redhat-ga</id>
+			<name>Red Hat GA Repository</name>
+			<url>https://maven.repository.redhat.com/ga/</url>
+		</pluginRepository>
+	</pluginRepositories>
+</project>

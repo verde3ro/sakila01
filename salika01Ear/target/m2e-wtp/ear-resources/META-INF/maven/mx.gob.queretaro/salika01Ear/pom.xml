@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>mx.gob.queretaro</groupId>
+		<artifactId>sakila01</artifactId>
+		<version>0.0.1</version>
+	</parent>
+	
+	<artifactId>salika01Ear</artifactId>
+	<packaging>ear</packaging>
+	<description>Proyecto que genera el archivo EAR</description>
+	<name>salika01Ear</name>
+	
+	<dependencies>
+		<dependency>
+			<groupId>mx.gob.queretaro</groupId>
+			<artifactId>sakila01Ejb</artifactId>
+			<version>0.0.1</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>mx.gob.queretaro</groupId>
+			<artifactId>sakila01War</artifactId>
+			<version>0.0.1</version>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<version>8</version>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<filtering>true</filtering>
+					<modules>
+						<ejbModule>
+							<groupId>mx.gob.queretaro</groupId>
+							<artifactId>sakila01Ejb</artifactId>
+							<bundleDir>/</bundleDir>
+						</ejbModule>
+						<webModule>
+							<groupId>mx.gob.queretaro</groupId>
+							<artifactId>sakila01War</artifactId>
+							<bundleDir>/</bundleDir>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
