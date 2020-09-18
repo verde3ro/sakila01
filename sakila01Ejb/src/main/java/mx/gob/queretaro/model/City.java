@@ -11,12 +11,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="city")
+@NamedQuery(name="City.findAll", query="SELECT c.cityId, c.city, c.lastUpdate, c.status FROM City c ORDER BY c.cityId ASC")
 public class City implements Serializable {
 
 	private static final long serialVersionUID = 98357281576429822L;

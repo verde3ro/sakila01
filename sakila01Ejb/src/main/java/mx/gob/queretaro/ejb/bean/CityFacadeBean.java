@@ -14,7 +14,7 @@ import mx.gob.queretaro.model.City;
 @Transactional
 public class CityFacadeBean implements ICityFacadeLocal {
 
-	@PersistenceContext(unitName = "sakila")
+	@PersistenceContext(unitName = "sakila") // Inyección de dependencias
 	private EntityManager em;
 
 	@Override
@@ -31,22 +31,23 @@ public class CityFacadeBean implements ICityFacadeLocal {
 		return entity;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<City> obtenerTodos() {
-		// TODO Auto-generated method stub
-		return null;
+		return em.createNamedQuery("City.findAll").getResultList();
 	}
 
 	@Override
-	public City obtenerPorIdJpql(short cityId) { // JPQL
-		// TODO Auto-generated method stub
-		return null;
+	public City obtenerPorIdJpql(short cityId) { // JPQL objetos
+		return (City) em
+				.createQuery("SELECT NEW City(c.cityId, c.city, c.lastUpdate) FROM City c WHERE c.cityId = :cityId")
+				.setParameter("cityId", cityId)
+				.getSingleResult();
 	}
 
 	@Override
 	public City obtenerPorIdClase(short cityId) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(City.class, cityId);
 	}
 
 }
