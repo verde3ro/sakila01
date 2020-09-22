@@ -41,17 +41,20 @@
 			<artifactId>jboss-annotations-api_1.3_spec</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<!-- EJB -->
 		<dependency>
 			<groupId>org.jboss.spec.javax.ejb</groupId>
 			<artifactId>jboss-ejb-api_3.2_spec</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<!-- JPA -->
 		<dependency>
 			<groupId>org.jboss.javaee</groupId>
 			<artifactId>jboss-persistence-api</artifactId>
 			<version>3.0.0.20070913080910</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- JTA -->
 		<dependency>
 			<groupId>org.jboss.spec.javax.transaction</groupId>
 			<artifactId>jboss-transaction-api_1.3_spec</artifactId>
